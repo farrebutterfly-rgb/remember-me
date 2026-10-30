@@ -1,0 +1,7 @@
+{
+  "note": "TEST USERS ONLY. Passwords are published on purpose so the demo and tests can log in. Never reuse this file outside local testing.",
+  "users": [
+    { "id": "usr_alice", "username": "alice", "password": "alice-test-pass", "email": "alice@users.example" },
+    { "id": "usr_bob", "username": "bob", "password": "bob-test-pass", "email": "bob@users.example" }
+  ]
+}
