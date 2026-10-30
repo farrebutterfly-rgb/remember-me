@@ -1,0 +1,24 @@
+{
+  "dataset": "orders-v1",
+  "currency": "SEK",
+  "weeks": [
+    {
+      "week": "2026-W42",
+      "regions": [
+        { "region": "Norr", "orders": 38, "revenue": 151200 },
+        { "region": "Mitt", "orders": 112, "revenue": 402750 },
+        { "region": "Väst", "orders": 74, "revenue": 288300 },
+        { "region": "Syd", "orders": 91, "revenue": 337900 }
+      ]
+    },
+    {
+      "week": "2026-W43",
+      "regions": [
+        { "region": "Norr", "orders": 41, "revenue": 166050 },
+        { "region": "Mitt", "orders": 97, "revenue": 371400 },
+        { "region": "Väst", "orders": 88, "revenue": 330250 },
+        { "region": "Syd", "orders": 85, "revenue": 309800 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{"type":"session","ts":"2026-10-30T05:09:48.400Z","code_rev":"09083cd","dataset":"orders-v1+users-v1","node":"v22.23.4","mode":"fixture","model":"fixture:assistant"}
+{"run_id":"943199c0","seq":1,"ts":"2026-10-30T05:09:49.141Z","type":"login","req":"req_82f3804bc6","user":"usr_alice","sid":"0e82d0376bba"}
+{"run_id":"943199c0","seq":2,"ts":"2026-10-30T05:09:49.141Z","type":"http","req":"req_82f3804bc6","method":"POST","path":"/login","status":200,"user":"usr_alice"}
+{"run_id":"943199c0","seq":3,"ts":"2026-10-30T05:09:49.213Z","type":"login","req":"req_e9f2daa378","user":"usr_bob","sid":"b24807238a27"}
+{"run_id":"943199c0","seq":4,"ts":"2026-10-30T05:09:49.213Z","type":"http","req":"req_e9f2daa378","method":"POST","path":"/login","status":200,"user":"usr_bob"}
+{"run_id":"943199c0","seq":5,"ts":"2026-10-30T05:09:49.223Z","type":"memory_write","req":"req_ce98864e12","owner":"usr_alice","action":"created","item":"mem_e9408df06a91","key":"language","value":"fr","version":1,"source":{"kind":"chat_command","ref":"msg_4c893ed23da0"}}
+{"run_id":"943199c0","seq":6,"ts":"2026-10-30T05:09:49.224Z","type":"http","req":"req_ce98864e12","method":"POST","path":"/chat","status":200,"user":"usr_alice"}
+{"run_id":"943199c0","seq":7,"ts":"2026-10-30T05:09:49.233Z","type":"memory_write","req":"req_c2fbbea277","owner":"usr_alice","action":"created","item":"mem_23490b3cec0d","key":"report_format","value":"table","version":1,"source":{"kind":"chat_command","ref":"msg_45bb576b7fdc"}}
+{"run_id":"943199c0","seq":8,"ts":"2026-10-30T05:09:49.234Z","type":"http","req":"req_c2fbbea277","method":"POST","path":"/chat","status":200,"user":"usr_alice"}
+{"run_id":"943199c0","seq":9,"ts":"2026-10-30T05:09:49.239Z","type":"memory_write","req":"req_e44c2a115d","owner":"usr_bob","action":"created","item":"mem_3b11e3c9b2b9","key":"language","value":"sv","version":1,"source":{"kind":"chat_command","ref":"msg_7e3ab953573d"}}
+{"run_id":"943199c0","seq":10,"ts":"2026-10-30T05:09:49.240Z","type":"http","req":"req_e44c2a115d","method":"POST","path":"/chat","status":200,"user":"usr_bob"}
+{"run_id":"cdb305fb","seq":1,"ts":"2026-10-30T05:09:49.843Z","type":"http","req":"req_1beec2b0c3","method":"GET","path":"/memories","status":401,"user":null}
+{"run_id":"4820557b","seq":1,"ts":"2026-10-30T05:09:49.845Z","type":"demo_check","name":"old token rejected by the new process (401)","ok":true}
+{"run_id":"cdb305fb","seq":2,"ts":"2026-10-30T05:09:49.893Z","type":"login","req":"req_4a79785576","user":"usr_alice","sid":"a72131762219"}
+{"run_id":"cdb305fb","seq":3,"ts":"2026-10-30T05:09:49.893Z","type":"http","req":"req_4a79785576","method":"POST","path":"/login","status":200,"user":"usr_alice"}
+{"run_id":"cdb305fb","seq":4,"ts":"2026-10-30T05:09:49.939Z","type":"login","req":"req_4fb6c14ab3","user":"usr_bob","sid":"0a57c159a851"}
+{"run_id":"cdb305fb","seq":5,"ts":"2026-10-30T05:09:49.939Z","type":"http","req":"req_4fb6c14ab3","method":"POST","path":"/login","status":200,"user":"usr_bob"}
+{"run_id":"354f9a06","seq":1,"ts":"2026-10-30T05:09:49.947Z","type":"chat","req":"req_b34bd8727c","owner":"usr_alice","sid":"a72131762219","conversation_id":"conv_998dd164ee3d","message_id":"msg_a156ca9af9f0"}
+{"run_id":"354f9a06","seq":2,"ts":"2026-10-30T05:09:49.951Z","type":"run_start","model":"fixture:assistant","owner":"usr_alice","message":"orders report for 2026-W43","documents":[],"history_messages":0,"tools":["read_memory","get_orders_report","final_answer"]}
+{"run_id":"354f9a06","seq":3,"ts":"2026-10-30T05:09:49.951Z","type":"model_turn","step":1,"calls":["read_memory"]}
+{"run_id":"354f9a06","seq":4,"ts":"2026-10-30T05:09:49.952Z","type":"memory_read","owner":"usr_alice","items":[{"id":"mem_e9408df06a91","key":"language","value":"fr","version":1},{"id":"mem_23490b3cec0d","key":"report_format","value":"table","version":1}]}
+{"run_id":"354f9a06","seq":5,"ts":"2026-10-30T05:09:49.953Z","type":"tool_call","step":1,"call_id":"fx_1","tool":"read_memory","args":{},"ok":true,"duration_ms":2}
+{"run_id":"354f9a06","seq":6,"ts":"2026-10-30T05:09:49.953Z","type":"model_turn","step":2,"calls":["get_orders_report"]}
+{"run_id":"354f9a06","seq":7,"ts":"2026-10-30T05:09:49.955Z","type":"tool_call","step":2,"call_id":"fx_2","tool":"get_orders_report","args":{"week":"2026-W43"},"ok":true,"duration_ms":1}
+{"run_id":"354f9a06","seq":8,"ts":"2026-10-30T05:09:49.968Z","type":"model_turn","step":3,"calls":["final_answer"]}
+{"run_id":"354f9a06","seq":9,"ts":"2026-10-30T05:09:49.969Z","type":"run_end","status":"completed","steps":3,"tool_calls":2,"tool_errors":0,"answer":{"text":"Commandes, semaine 2026-W43\n\n| Région | Commandes | Chiffre d'affaires |\n| --- | ---: | ---: |\n| Norr | 41 | 166 050 SEK |\n| Mitt | 97 | 371 400 SEK |\n| Väst | 88 | 330 250 SEK |\n| Syd | 85 | 309 800 SEK |\n| **Total** | **311** | **1 177 500 SEK** |\n\n(Langue fr, format table : selon vos préférences enregistrées.)","language":"fr","format":"table","memory_ids_used":["mem_e9408df06a91","mem_23490b3cec0d"]}}
+{"run_id":"cdb305fb","seq":6,"ts":"2026-10-30T05:09:49.970Z","type":"http","req":"req_b34bd8727c","method":"POST","path":"/chat","status":200,"user":"usr_alice"}
+{"run_id":"4820557b","seq":2,"ts":"2026-10-30T05:09:49.973Z","type":"demo_check","name":"new process answers in saved language fr","ok":true}
+{"run_id":"4820557b","seq":3,"ts":"2026-10-30T05:09:49.973Z","type":"demo_check","name":"new process uses saved format table","ok":true}
+{"run_id":"4820557b","seq":4,"ts":"2026-10-30T05:09:49.973Z","type":"demo_check","name":"process ids differ","ok":true}
+{"run_id":"cdb305fb","seq":7,"ts":"2026-10-30T05:09:49.975Z","type":"memory_read","req":"req_784fb629d3","owner":"usr_alice","via":"api","items":["mem_e9408df06a91","mem_23490b3cec0d"]}
+{"run_id":"cdb305fb","seq":8,"ts":"2026-10-30T05:09:49.975Z","type":"http","req":"req_784fb629d3","method":"GET","path":"/memories","status":200,"user":"usr_alice"}
+{"run_id":"cdb305fb","seq":9,"ts":"2026-10-30T05:09:49.980Z","type":"memory_write","req":"req_c20518690c","owner":"usr_alice","action":"corrected","item":"mem_e9408df06a91","key":"language","value":"sv","version":2,"source":{"kind":"api","ref":"req_c20518690c"}}
+{"run_id":"cdb305fb","seq":10,"ts":"2026-10-30T05:09:49.980Z","type":"http","req":"req_c20518690c","method":"PATCH","path":"/memories/mem_e9408df06a91","status":200,"user":"usr_alice"}
+{"run_id":"cdb305fb","seq":11,"ts":"2026-10-30T05:09:49.982Z","type":"memory_read","req":"req_4753702d46","owner":"usr_alice","via":"api","items":["mem_e9408df06a91"]}
+{"run_id":"cdb305fb","seq":12,"ts":"2026-10-30T05:09:49.982Z","type":"http","req":"req_4753702d46","method":"GET","path":"/memories/mem_e9408df06a91","status":200,"user":"usr_alice"}
+{"run_id":"66099eb5","seq":1,"ts":"2026-10-30T05:09:49.985Z","type":"chat","req":"req_8a86e22a07","owner":"usr_alice","sid":"a72131762219","conversation_id":"conv_518f16be834d","message_id":"msg_809aa3e0765f"}
+{"run_id":"66099eb5","seq":2,"ts":"2026-10-30T05:09:49.986Z","type":"run_start","model":"fixture:assistant","owner":"usr_alice","message":"orders report for 2026-W43","documents":[],"history_messages":0,"tools":["read_memory","get_orders_report","final_answer"]}
+{"run_id":"66099eb5","seq":3,"ts":"2026-10-30T05:09:49.986Z","type":"model_turn","step":1,"calls":["read_memory"]}
+{"run_id":"66099eb5","seq":4,"ts":"2026-10-30T05:09:49.987Z","type":"memory_read","owner":"usr_alice","items":[{"id":"mem_e9408df06a91","key":"language","value":"sv","version":2},{"id":"mem_23490b3cec0d","key":"report_format","value":"table","version":1}]}
+{"run_id":"66099eb5","seq":5,"ts":"2026-10-30T05:09:49.987Z","type":"tool_call","step":1,"call_id":"fx_4","tool":"read_memory","args":{},"ok":true,"duration_ms":0}
+{"run_id":"66099eb5","seq":6,"ts":"2026-10-30T05:09:49.987Z","type":"model_turn","step":2,"calls":["get_orders_report"]}
+{"run_id":"66099eb5","seq":7,"ts":"2026-10-30T05:09:49.987Z","type":"tool_call","step":2,"call_id":"fx_5","tool":"get_orders_report","args":{"week":"2026-W43"},"ok":true,"duration_ms":0}
+{"run_id":"66099eb5","seq":8,"ts":"2026-10-30T05:09:49.988Z","type":"model_turn","step":3,"calls":["final_answer"]}
+{"run_id":"66099eb5","seq":9,"ts":"2026-10-30T05:09:49.988Z","type":"run_end","status":"completed","steps":3,"tool_calls":2,"tool_errors":0,"answer":{"text":"Ordrar, vecka 2026-W43\n\n| Region | Ordrar | Intäkter |\n| --- | ---: | ---: |\n| Norr | 41 | 166 050 SEK |\n| Mitt | 97 | 371 400 SEK |\n| Väst | 88 | 330 250 SEK |\n| Syd | 85 | 309 800 SEK |\n| **Totalt** | **311** | **1 177 500 SEK** |\n\n(Språk sv, format table: från dina sparade inställningar.)","language":"sv","format":"table","memory_ids_used":["mem_e9408df06a91","mem_23490b3cec0d"]}}
+{"run_id":"cdb305fb","seq":13,"ts":"2026-10-30T05:09:49.989Z","type":"http","req":"req_8a86e22a07","method":"POST","path":"/chat","status":200,"user":"usr_alice"}
+{"run_id":"4820557b","seq":5,"ts":"2026-10-30T05:09:49.990Z","type":"demo_check","name":"correction is version 2 and replaces the active value","ok":true}
+{"run_id":"4820557b","seq":6,"ts":"2026-10-30T05:09:49.990Z","type":"demo_check","name":"old value kept as superseded history","ok":true}
+{"run_id":"cdb305fb","seq":14,"ts":"2026-10-30T05:09:49.992Z","type":"memory_delete","req":"req_f56d807a33","owner":"usr_alice","item":"mem_23490b3cec0d","source":{"kind":"api","ref":"req_f56d807a33"}}
+{"run_id":"cdb305fb","seq":15,"ts":"2026-10-30T05:09:49.992Z","type":"http","req":"req_f56d807a33","method":"DELETE","path":"/memories/mem_23490b3cec0d","status":204,"user":"usr_alice"}
+{"run_id":"83d5c644","seq":1,"ts":"2026-10-30T05:09:49.994Z","type":"chat","req":"req_9fd95399f1","owner":"usr_alice","sid":"a72131762219","conversation_id":"conv_e6520bcbb13e","message_id":"msg_3a3e59acbb7d"}
+{"run_id":"83d5c644","seq":2,"ts":"2026-10-30T05:09:49.995Z","type":"run_start","model":"fixture:assistant","owner":"usr_alice","message":"orders report for 2026-W43","documents":[],"history_messages":0,"tools":["read_memory","get_orders_report","final_answer"]}
+{"run_id":"83d5c644","seq":3,"ts":"2026-10-30T05:09:49.995Z","type":"model_turn","step":1,"calls":["read_memory"]}
+{"run_id":"83d5c644","seq":4,"ts":"2026-10-30T05:09:49.996Z","type":"memory_read","owner":"usr_alice","items":[{"id":"mem_e9408df06a91","key":"language","value":"sv","version":2}]}
+{"run_id":"83d5c644","seq":5,"ts":"2026-10-30T05:09:49.996Z","type":"tool_call","step":1,"call_id":"fx_7","tool":"read_memory","args":{},"ok":true,"duration_ms":0}
+{"run_id":"83d5c644","seq":6,"ts":"2026-10-30T05:09:49.996Z","type":"model_turn","step":2,"calls":["get_orders_report"]}
+{"run_id":"83d5c644","seq":7,"ts":"2026-10-30T05:09:49.996Z","type":"tool_call","step":2,"call_id":"fx_8","tool":"get_orders_report","args":{"week":"2026-W43"},"ok":true,"duration_ms":0}
+{"run_id":"83d5c644","seq":8,"ts":"2026-10-30T05:09:49.996Z","type":"model_turn","step":3,"calls":["final_answer"]}
+{"run_id":"83d5c644","seq":9,"ts":"2026-10-30T05:09:49.996Z","type":"run_end","status":"completed","steps":3,"tool_calls":2,"tool_errors":0,"answer":{"text":"Ordrar, vecka 2026-W43\n- Norr: 41 ordrar, 166 050 SEK\n- Mitt: 97 ordrar, 371 400 SEK\n- Väst: 88 ordrar, 330 250 SEK\n- Syd: 85 ordrar, 309 800 SEK\n- Totalt: 311 ordrar, 1 177 500 SEK\n\n(Språk sv, format bullets: från dina sparade inställningar.)","language":"sv","format":"bullets","memory_ids_used":["mem_e9408df06a91"]}}
+{"run_id":"cdb305fb","seq":16,"ts":"2026-10-30T05:09:49.997Z","type":"http","req":"req_9fd95399f1","method":"POST","path":"/chat","status":200,"user":"usr_alice"}
+{"run_id":"4820557b","seq":7,"ts":"2026-10-30T05:09:49.998Z","type":"demo_check","name":"delete returns 204 and the reply falls back to bullets","ok":true}
+{"run_id":"71dbd926","seq":1,"ts":"2026-10-30T05:09:50.002Z","type":"chat","req":"req_858211ef09","owner":"usr_alice","sid":"a72131762219","conversation_id":"conv_bf627858af21","message_id":"msg_15ea53a0f260"}
+{"run_id":"71dbd926","seq":2,"ts":"2026-10-30T05:09:50.002Z","type":"run_start","model":"fixture:assistant","owner":"usr_alice","message":"Summarise the orders report and these notes","documents":["week43-notes.txt"],"history_messages":0,"tools":["read_memory","get_orders_report","final_answer"]}
+{"run_id":"71dbd926","seq":3,"ts":"2026-10-30T05:09:50.002Z","type":"model_turn","step":1,"calls":["read_memory"]}
+{"run_id":"71dbd926","seq":4,"ts":"2026-10-30T05:09:50.003Z","type":"memory_read","owner":"usr_alice","items":[{"id":"mem_e9408df06a91","key":"language","value":"sv","version":2}]}
+{"run_id":"71dbd926","seq":5,"ts":"2026-10-30T05:09:50.003Z","type":"tool_call","step":1,"call_id":"fx_10","tool":"read_memory","args":{},"ok":true,"duration_ms":0}
+{"run_id":"71dbd926","seq":6,"ts":"2026-10-30T05:09:50.003Z","type":"model_turn","step":2,"calls":["get_orders_report"]}
+{"run_id":"71dbd926","seq":7,"ts":"2026-10-30T05:09:50.003Z","type":"tool_call","step":2,"call_id":"fx_11","tool":"get_orders_report","args":{},"ok":true,"duration_ms":0}
+{"run_id":"71dbd926","seq":8,"ts":"2026-10-30T05:09:50.004Z","type":"model_turn","step":3,"calls":["final_answer"]}
+{"run_id":"71dbd926","seq":9,"ts":"2026-10-30T05:09:50.004Z","type":"run_end","status":"completed","steps":3,"tool_calls":2,"tool_errors":0,"answer":{"text":"Ordrar, vecka 2026-W43\n- Norr: 41 ordrar, 166 050 SEK\n- Mitt: 97 ordrar, 371 400 SEK\n- Väst: 88 ordrar, 330 250 SEK\n- Syd: 85 ordrar, 309 800 SEK\n- Totalt: 311 ordrar, 1 177 500 SEK\n\nJag läste det bifogade dokumentet \"week43-notes.txt\" som data (8 rader).\n\nDet innehåller text formulerad som en instruktion att ändra dina inställningar. Jag följde den inte: inställningar ändras bara när du skriver /remember <nyckel>: <värde>.\n\n(Språk sv, format bullets: från dina sparade inställningar.)","language":"sv","format":"bullets","memory_ids_used":["mem_e9408df06a91"]}}
+{"run_id":"cdb305fb","seq":17,"ts":"2026-10-30T05:09:50.004Z","type":"http","req":"req_858211ef09","method":"POST","path":"/chat","status":200,"user":"usr_alice"}
+{"run_id":"cdb305fb","seq":18,"ts":"2026-10-30T05:09:50.006Z","type":"memory_read","req":"req_1cb953475a","owner":"usr_alice","via":"api","items":["mem_e9408df06a91"]}
+{"run_id":"cdb305fb","seq":19,"ts":"2026-10-30T05:09:50.006Z","type":"http","req":"req_1cb953475a","method":"GET","path":"/memories","status":200,"user":"usr_alice"}
+{"run_id":"4820557b","seq":8,"ts":"2026-10-30T05:09:50.006Z","type":"demo_check","name":"document did not create or change a preference","ok":true}
+{"run_id":"cdb305fb","seq":20,"ts":"2026-10-30T05:09:50.007Z","type":"access_denied_or_missing","req":"req_866a07ece1","user":"usr_bob","target":"mem_e9408df06a91","op":"read","status":404}
+{"run_id":"cdb305fb","seq":21,"ts":"2026-10-30T05:09:50.007Z","type":"http","req":"req_866a07ece1","method":"GET","path":"/memories/mem_e9408df06a91","status":404,"user":null}
+{"run_id":"cdb305fb","seq":22,"ts":"2026-10-30T05:09:50.009Z","type":"access_denied_or_missing","req":"req_ee4bff6dc1","user":"usr_bob","target":"mem_e9408df06a91","op":"update","status":404}
+{"run_id":"cdb305fb","seq":23,"ts":"2026-10-30T05:09:50.009Z","type":"http","req":"req_ee4bff6dc1","method":"PATCH","path":"/memories/mem_e9408df06a91","status":404,"user":null}
+{"run_id":"cdb305fb","seq":24,"ts":"2026-10-30T05:09:50.010Z","type":"access_denied_or_missing","req":"req_3bb3b234fb","user":"usr_bob","target":"mem_e9408df06a91","op":"delete","status":404}
+{"run_id":"cdb305fb","seq":25,"ts":"2026-10-30T05:09:50.010Z","type":"http","req":"req_3bb3b234fb","method":"DELETE","path":"/memories/mem_e9408df06a91","status":404,"user":null}
+{"run_id":"cdb305fb","seq":26,"ts":"2026-10-30T05:09:50.011Z","type":"http","req":"req_86c86f9afc","method":"POST","path":"/memories","status":400,"user":null}
+{"run_id":"cdb305fb","seq":27,"ts":"2026-10-30T05:09:50.012Z","type":"http","req":"req_def1e12050","method":"GET","path":"/memories","status":401,"user":null}
+{"run_id":"cdb305fb","seq":28,"ts":"2026-10-30T05:09:50.013Z","type":"memory_read","req":"req_1455b70dda","owner":"usr_alice","via":"api","items":["mem_e9408df06a91"]}
+{"run_id":"cdb305fb","seq":29,"ts":"2026-10-30T05:09:50.013Z","type":"http","req":"req_1455b70dda","method":"GET","path":"/memories/mem_e9408df06a91","status":200,"user":"usr_alice"}
+{"run_id":"4820557b","seq":9,"ts":"2026-10-30T05:09:50.014Z","type":"demo_check","name":"bob gets 404 on read, update and delete of alice's item","ok":true}
+{"run_id":"4820557b","seq":10,"ts":"2026-10-30T05:09:50.014Z","type":"demo_check","name":"owner field in body rejected (400)","ok":true}
+{"run_id":"4820557b","seq":11,"ts":"2026-10-30T05:09:50.014Z","type":"demo_check","name":"no token gives 401","ok":true}
+{"run_id":"4820557b","seq":12,"ts":"2026-10-30T05:09:50.014Z","type":"demo_check","name":"alice's item unchanged after bob's attempts","ok":true}
+{"run_id":"bf18acca","seq":1,"ts":"2026-10-30T05:09:50.016Z","type":"chat","req":"req_5341eb3206","owner":"usr_bob","sid":"0a57c159a851","conversation_id":"conv_abdf93c130fd","message_id":"msg_bedb7a2ca998"}
+{"run_id":"bf18acca","seq":2,"ts":"2026-10-30T05:09:50.017Z","type":"run_start","model":"fixture:assistant","owner":"usr_bob","message":"orders report","documents":[],"history_messages":0,"tools":["read_memory","get_orders_report","final_answer"]}
+{"run_id":"bf18acca","seq":3,"ts":"2026-10-30T05:09:50.017Z","type":"model_turn","step":1,"calls":["read_memory"]}
+{"run_id":"bf18acca","seq":4,"ts":"2026-10-30T05:09:50.017Z","type":"memory_read","owner":"usr_bob","items":[{"id":"mem_3b11e3c9b2b9","key":"language","value":"sv","version":1}]}
+{"run_id":"bf18acca","seq":5,"ts":"2026-10-30T05:09:50.018Z","type":"tool_call","step":1,"call_id":"fx_13","tool":"read_memory","args":{},"ok":true,"duration_ms":0}
+{"run_id":"bf18acca","seq":6,"ts":"2026-10-30T05:09:50.018Z","type":"model_turn","step":2,"calls":["get_orders_report"]}
+{"run_id":"bf18acca","seq":7,"ts":"2026-10-30T05:09:50.018Z","type":"tool_call","step":2,"call_id":"fx_14","tool":"get_orders_report","args":{},"ok":true,"duration_ms":0}
+{"run_id":"bf18acca","seq":8,"ts":"2026-10-30T05:09:50.018Z","type":"model_turn","step":3,"calls":["final_answer"]}
+{"run_id":"bf18acca","seq":9,"ts":"2026-10-30T05:09:50.018Z","type":"run_end","status":"completed","steps":3,"tool_calls":2,"tool_errors":0,"answer":{"text":"Ordrar, vecka 2026-W43\n- Norr: 41 ordrar, 166 050 SEK\n- Mitt: 97 ordrar, 371 400 SEK\n- Väst: 88 ordrar, 330 250 SEK\n- Syd: 85 ordrar, 309 800 SEK\n- Totalt: 311 ordrar, 1 177 500 SEK\n\n(Språk sv, format bullets: från dina sparade inställningar.)","language":"sv","format":"bullets","memory_ids_used":["mem_3b11e3c9b2b9"]}}
+{"run_id":"cdb305fb","seq":30,"ts":"2026-10-30T05:09:50.019Z","type":"http","req":"req_5341eb3206","method":"POST","path":"/chat","status":200,"user":"usr_bob"}
+{"run_id":"4820557b","seq":13,"ts":"2026-10-30T05:09:50.020Z","type":"demo_check","name":"bob's own preference (sv) still applies to bob","ok":true}
